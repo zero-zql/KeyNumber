@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  KeyNumber
+//
+//  Created by zhuqinlu on 16/4/11.
+//  Copyright © 2016年 zero. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIColor+extension.h"
+#import "UIImage+extension.h"
+#import "UITextField+extension.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/// 设置颜色
+#define UIColorRGB(R,G,B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0]
+
+/// 设置颜色 示例：UIColorHex(0x26A7E8)
+#define UIColorHex(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+/// 设置颜色与透明度 示例：UIColorHEX_Alpha(0x26A7E8, 0.5)
+#define UIColorHex_Alpha(rgbValue, al) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:al]
+
+#pragma mark - 字体
+
+#pragma mark 大小-细体
+/// *号字体
+#define kFontSize(size) [UIFont systemFontOfSize:size]
+/// *号粗体
+#define kFontSizeBold(size) [UIFont boldSystemFontOfSize:size]
+
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+
+
+#endif /* PrefixHeader_pch */
